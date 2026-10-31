@@ -6,8 +6,126 @@
     <title>ابزار آریس | فروشگاه تخصصی ابزارآلات</title>
     <!-- لینک فونت وزیرمتن -->
     <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
-    <!-- لینک به فایل CSS جداگانه -->
-    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* تنظیمات پایه */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Vazirmatn', sans-serif; }
+        body { background-color: #f4f6f9; color: #333; overflow-x: hidden; }
+        a { text-decoration: none; transition: all 0.3s ease; }
+        ul { list-style: none; }
+        .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 15px; }
+
+        /* هدر بالایی */
+        .top-bar { background-color: #1a1a1a; color: #ccc; padding: 10px 0; font-size: 12px; }
+        .top-bar .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+        .top-bar .phone span { color: #ffcc00; }
+        .top-links { display: flex; gap: 15px; }
+        .top-links a { color: #ccc; }
+        .top-links a:hover { color: #ffcc00; }
+
+        /* هدر اصلی */
+        .main-header { background-color: #fff; padding: 15px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; }
+        .main-header .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
+        .header-right .logo { max-height: 45px; display: block; }
+        .search-box { display: flex; background: #f1f1f1; border-radius: 8px; padding: 8px 15px; width: 100%; max-width: 400px; }
+        .search-box input { border: none; background: transparent; outline: none; width: 100%; font-family: inherit; }
+        .search-box button { border: none; background: transparent; cursor: pointer; }
+        .header-left { display: flex; align-items: center; gap: 15px; }
+        .header-left a { color: #333; font-size: 13px; }
+        .cart-btn { font-size: 18px; position: relative; }
+        .cart-count { font-size: 12px; background: #ffcc00; color: #000; padding: 2px 6px; border-radius: 50%; font-weight: bold; }
+        .buy-btn { background-color: #ffcc00; padding: 8px 20px; border-radius: 8px; font-weight: bold; color: #000 !important; }
+
+        /* منوی ناوبری */
+        .main-nav { background-color: #fff; border-bottom: 1px solid #eee; overflow-x: auto; }
+        .main-nav ul { display: flex; padding: 15px 0; gap: 25px; font-size: 14px; white-space: nowrap; }
+        .main-nav a { color: #555; padding-bottom: 5px; }
+        .main-nav a:hover { color: #000; border-bottom: 2px solid #ffcc00; }
+
+        /* اسلایدر بنر */
+        .hero-slider { margin-top: 25px; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); background: #000; }
+        .slide { display: none; width: 100%; }
+        .slide.active { display: block; }
+        .banner-img { width: 100%; height: auto; display: block; }
+
+        /* دسته‌بندی محصولات */
+        .categories { background: #fff; margin-top: 25px; border-radius: 12px; padding: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); text-align: center; }
+        .categories h2 { margin-bottom: 25px; font-size: 20px; }
+        .category-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 15px; }
+        .cat-item { padding: 15px; border-radius: 10px; background: #fafafa; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+        .cat-item img { width: 45px; height: 45px; margin-bottom: 10px; }
+        .cat-item p { font-size: 13px; font-weight: bold; }
+
+        /* بخش محصولات */
+        .products { margin-top: 40px; }
+        .section-title { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+        .section-title h2 { font-size: 20px; color: #222; }
+        .section-title a { color: #888; font-size: 14px; }
+
+        .product-grid { display: flex; flex-wrap: wrap; gap: 20px; justify-content: flex-start; }
+
+        .product-card { 
+            background: #fff; border-radius: 12px; padding: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.04); 
+            text-align: center; border: 1px solid #eee; display: flex; flex-direction: column;
+            width: calc(25% - 15px); 
+            transition: all 0.3s ease;
+        }
+        .product-card:hover { box-shadow: 0 10px 25px rgba(0,0,0,0.1); border-color: #ffcc00; transform: translateY(-5px); }
+
+        .product-image { 
+            width: 100%; height: 150px; background: #f8f9fa; border-radius: 10px; 
+            margin-bottom: 15px; display: flex; align-items: center; justify-content: center; overflow: hidden;
+        }
+        /* استایل مهم برای عکس‌های Base64 */
+        .product-image img { width: 100%; height: 100%; object-fit: contain; }
+
+        .product-card h3 { font-size: 14px; margin-bottom: 10px; color: #333; height: 42px; overflow: hidden; }
+        .product-card .price { font-size: 16px; font-weight: bold; color: #000; margin-bottom: 15px; }
+        .product-card .price span { font-size: 12px; color: #777; font-weight: normal; }
+        
+        .add-to-cart { 
+            width: 100%; padding: 10px; background: #ffcc00; border: none; border-radius: 8px; 
+            font-family: inherit; font-weight: bold; cursor: pointer; margin-top: auto; transition: 0.3s;
+        }
+        .add-to-cart:hover { background: #e6b800; }
+
+        /* مزایا */
+        .features { display: flex; justify-content: space-between; flex-wrap: wrap; margin-top: 40px; padding: 25px; background: #fff; border-radius: 12px; gap: 15px; }
+        .feature-item { font-size: 13px; color: #555; display: flex; align-items: center; gap: 8px; }
+
+        /* فوتر */
+        .main-footer { background: #222; color: #ccc; margin-top: 50px; padding-top: 40px; }
+        .footer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; padding-bottom: 30px; }
+        .footer-col h3 { color: #fff; font-size: 16px; margin-bottom: 15px; }
+        .footer-col p { font-size: 13px; line-height: 1.8; color: #aaa; }
+        .footer-col ul li { margin-bottom: 10px; }
+        .footer-col ul a { color: #aaa; font-size: 13px; }
+        .footer-bottom { background: #1a1a1a; text-align: center; padding: 15px 0; font-size: 12px; color: #777; }
+
+        /* دکمه‌های شناور */
+        .floating-buttons { position: fixed; bottom: 30px; left: 30px; display: flex; flex-direction: column; gap: 15px; z-index: 999; }
+        .support-btn { background: #25D366; color: #fff; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; }
+        .scroll-top-btn { background: #333; color: #fff; border: none; width: 50px; height: 50px; border-radius: 50%; display: none; cursor: pointer; font-size: 20px; }
+
+        /* ریسپانسیو */
+        @media (max-width: 1024px) {
+            .product-card { width: calc(33.33% - 14px); }
+            .category-grid { grid-template-columns: repeat(3, 1fr); }
+            .footer-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 768px) {
+            .main-header .container { flex-direction: column; }
+            .header-right, .header-center, .header-left { justify-content: center; display: flex; }
+            .search-box { max-width: 100%; margin: 10px 0; }
+            .product-card { width: calc(50% - 10px); }
+            .features { flex-direction: column; align-items: center; }
+            .footer-grid { grid-template-columns: 1fr; text-align: center; }
+        }
+        @media (max-width: 480px) {
+            .product-card { width: 100%; }
+            .category-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
 </head>
 <body>
 
@@ -28,6 +146,7 @@
     <header class="main-header">
         <div class="container">
             <div class="header-right">
+                <!-- لوگو -->
                 <a href="#"><img src="logo.png" alt="ابزار آریس" class="logo" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Drill_icon.svg/512px-Drill_icon.svg.png'"></a>
             </div>
             <div class="header-center">
@@ -61,11 +180,12 @@
     <!-- بنر اصلی -->
     <section class="hero-slider container">
         <div class="slide active">
+            <!-- بنر با عکس پیش‌فرض در صورت لود نشدن -->
             <img src="banner.jpg" alt="بنر" class="banner-img" onerror="this.src='https://images.unsplash.com/photo-1504148455328-c376907d081c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80'">
         </div>
     </section>
 
-    <!-- دسته‌بندی محصولات -->
+    <!-- دسته‌بندی محصولات (با آیکون‌های SVG) -->
     <section class="categories container">
         <h2>دسته بندی محصولات</h2>
         <div class="category-grid">
@@ -96,7 +216,7 @@
         </div>
     </section>
 
-    <!-- پیشنهاد ویژه -->
+    <!-- پیشنهاد ویژه (عکس‌های Base64 - تضمینی) -->
     <section class="products container">
         <div class="section-title">
             <h2>پیشنهاد ویژه ابزار آریس</h2>
@@ -104,7 +224,7 @@
         </div>
         
         <div class="product-grid">
-            <!-- محصول ۱ -->
+            <!-- محصول ۱ (دریل) -->
             <div class="product-card">
                 <div class="product-image">
                     <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffcc00'><path d='M21 8V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h1v6H5a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2h-1v-6h1a2 2 0 0 0 2-2zM8 18H6v-2h2v2zm0-8H6V8h2v2zm10 8h-2v-2h2v2zm0-8h-2V8h2v2z'/></svg>" alt="دریل شارژی">
@@ -114,7 +234,7 @@
                 <button class="add-to-cart" onclick="addToCart()">افزودن به سبد 🛒</button>
             </div>
             
-            <!-- محصول ۲ -->
+            <!-- محصول ۲ (آچار) -->
             <div class="product-card">
                 <div class="product-image">
                     <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffcc00'><path d='M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z'/></svg>" alt="آچار بکس">
@@ -124,7 +244,7 @@
                 <button class="add-to-cart" onclick="addToCart()">افزودن به سبد 🛒</button>
             </div>
             
-            <!-- محصول ۳ -->
+            <!-- محصول ۳ (پولیش) -->
             <div class="product-card">
                 <div class="product-image">
                     <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffcc00'><path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z'/></svg>" alt="پولیش">
@@ -134,7 +254,7 @@
                 <button class="add-to-cart" onclick="addToCart()">افزودن به سبد 🛒</button>
             </div>
             
-            <!-- محصول ۴ -->
+            <!-- محصول ۴ (پیچ گوشتی) -->
             <div class="product-card">
                 <div class="product-image">
                     <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffcc00'><path d='M21 4.5l-1.5-1.5-15 15 1.5 1.5 15-15zM19.5 3L21 4.5l-1.5 1.5L18 4.5 19.5 3zM3 19.5L4.5 21l1.5-1.5L4.5 18 3 19.5z'/></svg>" alt="پیچ گوشتی">
