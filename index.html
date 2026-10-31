@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ابزار آریس | فروشگاه تخصصی ابزارآلات</title>
+    <!-- لینک فونت وزیرمتن -->
     <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+    <!-- لینک به فایل CSS جداگانه -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -26,12 +28,12 @@
     <header class="main-header">
         <div class="container">
             <div class="header-right">
-                <a href="#"><img src="logo.png" alt="ابزار آریس" class="logo"></a>
+                <a href="#"><img src="logo.png" alt="ابزار آریس" class="logo" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Drill_icon.svg/512px-Drill_icon.svg.png'"></a>
             </div>
             <div class="header-center">
                 <div class="search-box">
                     <input type="text" placeholder="جستجوی محصول...">
-                    <button>🔍</button>
+                    <button type="button">🔍</button>
                 </div>
             </div>
             <div class="header-left">
@@ -56,65 +58,87 @@
         </div>
     </nav>
 
-    <!-- 🌟 اسلایدر بنر (خودکار) 🌟 -->
+    <!-- بنر اصلی -->
     <section class="hero-slider container">
-        <div class="slider-wrapper">
-            <!-- عکس اول -->
-            <a href="#" class="slide active">
-                <img src="banner.jpg" alt="بنر ۱" class="banner-img">
-            </a>
-            <!-- عکس دوم (برای اینکه اسلایدر کار کند، یک بنر دیگر با نام banner2.jpg آپلود کنید) -->
-            <a href="#" class="slide">
-                <img src="banner.jpg" alt="بنر ۲" class="banner-img"> 
-            </a>
-        </div>
-        <div class="slider-dots">
-            <span class="dot active" onclick="currentSlide(0)"></span>
-            <span class="dot" onclick="currentSlide(1)"></span>
+        <div class="slide active">
+            <img src="banner.jpg" alt="بنر" class="banner-img" onerror="this.src='https://images.unsplash.com/photo-1504148455328-c376907d081c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80'">
         </div>
     </section>
 
     <!-- دسته‌بندی محصولات -->
-    <section class="categories container reveal">
+    <section class="categories container">
         <h2>دسته بندی محصولات</h2>
         <div class="category-grid">
-            <div class="cat-item"><div class="icon-placeholder">🛠️</div><p>پرق آلات</p></div>
-            <div class="cat-item"><div class="icon-placeholder">⛑️</div><p>تجهیزات ایمنی</p></div>
-            <div class="cat-item"><div class="icon-placeholder">📏</div><p>ابزار اندازه گیری</p></div>
-            <div class="cat-item"><div class="icon-placeholder">🔋</div><p>لوازم جانبی</p></div>
-            <div class="cat-item"><div class="icon-placeholder">🔧</div><p>ابزار دستی</p></div>
-            <div class="cat-item"><div class="icon-placeholder">🪛</div><p>ابزار برقی</p></div>
+            <div class="cat-item">
+                <img src="https://api.iconify.design/mdi:pipe-wrench.svg?color=%23ffcc00" alt="پرق آلات">
+                <p>پرق آلات</p>
+            </div>
+            <div class="cat-item">
+                <img src="https://api.iconify.design/mdi:hard-hat.svg?color=%23ffcc00" alt="تجهیزات ایمنی">
+                <p>تجهیزات ایمنی</p>
+            </div>
+            <div class="cat-item">
+                <img src="https://api.iconify.design/mdi:tape-measure.svg?color=%23ffcc00" alt="ابزار اندازه گیری">
+                <p>ابزار اندازه گیری</p>
+            </div>
+            <div class="cat-item">
+                <img src="https://api.iconify.design/mdi:battery-charging.svg?color=%23ffcc00" alt="لوازم جانبی">
+                <p>لوازم جانبی</p>
+            </div>
+            <div class="cat-item">
+                <img src="https://api.iconify.design/mdi:tools.svg?color=%23ffcc00" alt="ابزار دستی">
+                <p>ابزار دستی</p>
+            </div>
+            <div class="cat-item">
+                <img src="https://api.iconify.design/mdi:drill.svg?color=%23ffcc00" alt="ابزار برقی">
+                <p>ابزار برقی</p>
+            </div>
         </div>
     </section>
 
     <!-- پیشنهاد ویژه -->
-    <section class="products container reveal">
+    <section class="products container">
         <div class="section-title">
             <h2>پیشنهاد ویژه ابزار آریس</h2>
             <a href="#">مشاهده همه</a>
         </div>
+        
         <div class="product-grid">
+            <!-- محصول ۱ -->
             <div class="product-card">
-                <div class="product-image">🪛</div>
+                <div class="product-image">
+                    <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffcc00'><path d='M21 8V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h1v6H5a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2h-1v-6h1a2 2 0 0 0 2-2zM8 18H6v-2h2v2zm0-8H6V8h2v2zm10 8h-2v-2h2v2zm0-8h-2V8h2v2z'/></svg>" alt="دریل شارژی">
+                </div>
                 <h3>دریل شارژی آریس ۲۰ ولت</h3>
-                <img src="drill.jpg" alt="دریل شارژی آریس" style="width: 100%; height: 120px; object-fit: contain;">
                 <p class="price">۲,۵۰۰,۰۰۰ <span>تومان</span></p>
                 <button class="add-to-cart" onclick="addToCart()">افزودن به سبد 🛒</button>
             </div>
+            
+            <!-- محصول ۲ -->
             <div class="product-card">
-                <div class="product-image">🔧</div>
+                <div class="product-image">
+                    <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffcc00'><path d='M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z'/></svg>" alt="آچار بکس">
+                </div>
                 <h3>آچار بکس ۴۰ پارچه</h3>
                 <p class="price">۱,۲۰۰,۰۰۰ <span>تومان</span></p>
                 <button class="add-to-cart" onclick="addToCart()">افزودن به سبد 🛒</button>
             </div>
+            
+            <!-- محصول ۳ -->
             <div class="product-card">
-                <div class="product-image">⚙️</div>
+                <div class="product-image">
+                    <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffcc00'><path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z'/></svg>" alt="پولیش">
+                </div>
                 <h3>دستگاه پولیش زاویه‌ای</h3>
                 <p class="price">۳,۸۰۰,۰۰۰ <span>تومان</span></p>
                 <button class="add-to-cart" onclick="addToCart()">افزودن به سبد 🛒</button>
             </div>
+            
+            <!-- محصول ۴ -->
             <div class="product-card">
-                <div class="product-image">🛠️</div>
+                <div class="product-image">
+                    <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffcc00'><path d='M21 4.5l-1.5-1.5-15 15 1.5 1.5 15-15zM19.5 3L21 4.5l-1.5 1.5L18 4.5 19.5 3zM3 19.5L4.5 21l1.5-1.5L4.5 18 3 19.5z'/></svg>" alt="پیچ گوشتی">
+                </div>
                 <h3>ست پیچ گوشتی ۱۰ عددی</h3>
                 <p class="price">۸۵۰,۰۰۰ <span>تومان</span></p>
                 <button class="add-to-cart" onclick="addToCart()">افزودن به سبد 🛒</button>
@@ -123,7 +147,7 @@
     </section>
 
     <!-- مزایا -->
-    <section class="features container reveal">
+    <section class="features container">
         <div class="feature-item">🚚 پرداخت، بسته‌بندی و ارسال</div>
         <div class="feature-item">📦 ضمانت بازگشت کالا</div>
         <div class="feature-item">🛡️ ضمانت اصالت کالا</div>
@@ -131,7 +155,7 @@
         <div class="feature-item">💳 روش‌های پرداخت متنوع</div>
     </section>
 
-    <!-- 🌟 فوتر (پایین صفحه) 🌟 -->
+    <!-- فوتر -->
     <footer class="main-footer">
         <div class="container footer-grid">
             <div class="footer-col">
@@ -144,7 +168,6 @@
                     <li><a href="#">درباره ما</a></li>
                     <li><a href="#">تماس با ما</a></li>
                     <li><a href="#">قوانین و مقررات</a></li>
-                    <li><a href="#">حریم خصوصی</a></li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -153,14 +176,13 @@
                     <li><a href="#">پاسخ به سوالات متداول</a></li>
                     <li><a href="#">رویه ارسال سفارش</a></li>
                     <li><a href="#">شرایط بازگشت کالا</a></li>
-                    <li><a href="#">پیگیری سفارش</a></li>
                 </ul>
             </div>
             <div class="footer-col">
                 <h3>شبکه‌های اجتماعی</h3>
                 <div class="social-links">
-                    <a href="#">📸 اینستاگرام</a>
-                    <a href="#">✈️ تلگرام</a>
+                    <a href="#">📸 اینستاگرام</a><br>
+                    <a href="#">✈️ تلگرام</a><br>
                     <a href="#">💬 واتساپ</a>
                 </div>
             </div>
@@ -170,25 +192,19 @@
         </div>
     </footer>
 
-    <!-- 🌟 دکمه شناور بازگشت به بالا و پشتیبانی 🌟 -->
+    <!-- دکمه‌های شناور -->
     <div class="floating-buttons">
-        <a href="#" class="support-btn" title="پشتیبانی واتساپ">💬</a>
+        <a href="#" class="support-btn" title="پشتیبانی">💬</a>
         <button class="scroll-top-btn" id="scrollTopBtn" title="بازگشت به بالا">⬆️</button>
     </div>
 
-    <!-- 🌟 اسکریپت‌های سایت 🌟 -->
     <script>
-        // --- سبد خرید ---
         let cartCount = 0;
         function addToCart() {
             cartCount++;
             document.getElementById('cart-count').innerText = cartCount;
-            const cartBtn = document.querySelector('.cart-btn');
-            cartBtn.style.transform = 'scale(1.2)';
-            setTimeout(() => { cartBtn.style.transform = 'scale(1)'; }, 200);
         }
 
-        // --- دکمه بازگشت به بالا ---
         const scrollTopBtn = document.getElementById('scrollTopBtn');
         window.onscroll = function() {
             if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
@@ -200,50 +216,6 @@
         scrollTopBtn.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
-
-        // --- اسلایدر بنر خودکار ---
-        let slideIndex = 0;
-        const slides = document.querySelectorAll('.slide');
-        const dots = document.querySelectorAll('.dot');
-
-        function showSlides() {
-            slides.forEach(slide => slide.classList.remove('active'));
-            dots.forEach(dot => dot.classList.remove('active'));
-            
-            slideIndex++;
-            if (slideIndex >= slides.length) { slideIndex = 0; }
-            
-            slides[slideIndex].classList.add('active');
-            dots[slideIndex].classList.add('active');
-            
-            setTimeout(showSlides, 4000); // تغییر هر 4 ثانیه
-        }
-        
-        function currentSlide(n) {
-            slideIndex = n;
-            slides.forEach(slide => slide.classList.remove('active'));
-            dots.forEach(dot => dot.classList.remove('active'));
-            slides[slideIndex].classList.add('active');
-            dots[slideIndex].classList.add('active');
-        }
-        
-        // شروع اسلایدر
-        setTimeout(showSlides, 4000);
-
-        // --- انیمیشن اسکرول (ظاهر شدن بخش‌ها) ---
-        function reveal() {
-            var reveals = document.querySelectorAll(".reveal");
-            for (var i = 0; i < reveals.length; i++) {
-                var windowHeight = window.innerHeight;
-                var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementVisible = 100;
-                if (elementTop < windowHeight - elementVisible) {
-                    reveals[i].classList.add("active");
-                }
-            }
-        }
-        window.addEventListener("scroll", reveal);
-        reveal(); // اجرای اولیه
     </script>
 </body>
 </html>
