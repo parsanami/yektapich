@@ -3,17 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ابزار آریس | ابزارهای شارژی</title>
-    <!-- لینک فونت وزیرمتن -->
+    <title>ابزار آریس | فروشگاه تخصصی ابزارآلات</title>
     <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- هدر بالایی (نوار مشکی) -->
+    <!-- هدر بالایی -->
     <header class="top-bar">
         <div class="container">
-            <div class="phone">تماس با کارشناسان ابزارآلات: <span>۰۹۱۲-۶۱۶۶۴</span></div>
+            <div class="phone">تماس با کارشناسان: <span>۰۹۱۲-۶۱۶۶۴</span></div>
             <div class="top-links">
                 <a href="#">درباره ما</a>
                 <a href="#">سازمان‌ها</a>
@@ -23,13 +22,11 @@
         </div>
     </header>
 
-    <!-- هدر اصلی (سفید) -->
+    <!-- هدر اصلی -->
     <header class="main-header">
         <div class="container">
             <div class="header-right">
-                <a href="#">
-                    <img src="logo.png" alt="لوگو ابزار آریس" class="logo">
-                </a>
+                <a href="#"><img src="logo.png" alt="ابزار آریس" class="logo"></a>
             </div>
             <div class="header-center">
                 <div class="search-box">
@@ -59,84 +56,73 @@
         </div>
     </nav>
 
-    <!-- بنر اصلی (فقط عکس) -->
+    <!-- 🌟 اسلایدر بنر (خودکار) 🌟 -->
     <section class="hero-slider container">
-        <a href="#">
-            <img src="banner.jpg" alt="ابزارهای شارژی آریس" class="banner-img">
-        </a>
-    </section>
-
-    <!-- بخش دسته‌بندی محصولات -->
-    <section class="categories container">
-        <h2>دسته بندی محصولات</h2>
-        <div class="category-grid">
-            <div class="cat-item">
-                <div class="icon-placeholder">🛠️</div>
-                <p>پرق آلات</p>
-            </div>
-            <div class="cat-item">
-                <div class="icon-placeholder">⛑️</div>
-                <p>ابزار و تجهیزات ایمنی</p>
-            </div>
-            <div class="cat-item">
-                <div class="icon-placeholder">📏</div>
-                <p>ابزار اندازه گیری</p>
-            </div>
-            <div class="cat-item">
-                <div class="icon-placeholder">🔋</div>
-                <p>لوازم جانبی ابزار آلات</p>
-            </div>
-            <div class="cat-item">
-                <div class="icon-placeholder">🔧</div>
-                <p>ابزار دستی</p>
-            </div>
-            <div class="cat-item">
-                <div class="icon-placeholder">🪛</div>
-                <p>ابزار برقی و شارژی</p>
-            </div>
+        <div class="slider-wrapper">
+            <!-- عکس اول -->
+            <a href="#" class="slide active">
+                <img src="banner.jpg" alt="بنر ۱" class="banner-img">
+            </a>
+            <!-- عکس دوم (برای اینکه اسلایدر کار کند، یک بنر دیگر با نام banner2.jpg آپلود کنید) -->
+            <a href="#" class="slide">
+                <img src="banner.jpg" alt="بنر ۲" class="banner-img"> 
+            </a>
+        </div>
+        <div class="slider-dots">
+            <span class="dot active" onclick="currentSlide(0)"></span>
+            <span class="dot" onclick="currentSlide(1)"></span>
         </div>
     </section>
 
-    <!-- 🌟 بخش جدید: پیشنهاد ویژه (محصولات) 🌟 -->
-    <section class="products container">
+    <!-- دسته‌بندی محصولات -->
+    <section class="categories container reveal">
+        <h2>دسته بندی محصولات</h2>
+        <div class="category-grid">
+            <div class="cat-item"><div class="icon-placeholder">🛠️</div><p>پرق آلات</p></div>
+            <div class="cat-item"><div class="icon-placeholder">⛑️</div><p>تجهیزات ایمنی</p></div>
+            <div class="cat-item"><div class="icon-placeholder">📏</div><p>ابزار اندازه گیری</p></div>
+            <div class="cat-item"><div class="icon-placeholder">🔋</div><p>لوازم جانبی</p></div>
+            <div class="cat-item"><div class="icon-placeholder">🔧</div><p>ابزار دستی</p></div>
+            <div class="cat-item"><div class="icon-placeholder">🪛</div><p>ابزار برقی</p></div>
+        </div>
+    </section>
+
+    <!-- پیشنهاد ویژه -->
+    <section class="products container reveal">
         <div class="section-title">
             <h2>پیشنهاد ویژه ابزار آریس</h2>
             <a href="#">مشاهده همه</a>
         </div>
         <div class="product-grid">
-            <!-- محصول ۱ -->
             <div class="product-card">
-                <div class="product-image">🪛</div> <!-- فعلاً از ایموجی استفاده شده، بعداً عکس می‌گذاریم -->
+                <div class="product-image">🪛</div>
                 <h3>دریل شارژی آریس ۲۰ ولت</h3>
-                <p class="price">۲,۵۰۰,۰۰۰ تومان</p>
+                <p class="price">۲,۵۰۰,۰۰۰ <span>تومان</span></p>
                 <button class="add-to-cart" onclick="addToCart()">افزودن به سبد 🛒</button>
             </div>
-            <!-- محصول ۲ -->
             <div class="product-card">
                 <div class="product-image">🔧</div>
                 <h3>آچار بکس ۴۰ پارچه</h3>
-                <p class="price">۱,۲۰۰,۰۰۰ تومان</p>
+                <p class="price">۱,۲۰۰,۰۰۰ <span>تومان</span></p>
                 <button class="add-to-cart" onclick="addToCart()">افزودن به سبد 🛒</button>
             </div>
-            <!-- محصول ۳ -->
             <div class="product-card">
                 <div class="product-image">⚙️</div>
                 <h3>دستگاه پولیش زاویه‌ای</h3>
-                <p class="price">۳,۸۰۰,۰۰۰ تومان</p>
+                <p class="price">۳,۸۰۰,۰۰۰ <span>تومان</span></p>
                 <button class="add-to-cart" onclick="addToCart()">افزودن به سبد 🛒</button>
             </div>
-            <!-- محصول ۴ -->
             <div class="product-card">
                 <div class="product-image">🛠️</div>
                 <h3>ست پیچ گوشتی ۱۰ عددی</h3>
-                <p class="price">۸۵۰,۰۰۰ تومان</p>
+                <p class="price">۸۵۰,۰۰۰ <span>تومان</span></p>
                 <button class="add-to-cart" onclick="addToCart()">افزودن به سبد 🛒</button>
             </div>
         </div>
     </section>
 
-    <!-- بخش مزایا (پایین صفحه) -->
-    <section class="features container">
+    <!-- مزایا -->
+    <section class="features container reveal">
         <div class="feature-item">🚚 پرداخت، بسته‌بندی و ارسال</div>
         <div class="feature-item">📦 ضمانت بازگشت کالا</div>
         <div class="feature-item">🛡️ ضمانت اصالت کالا</div>
@@ -144,18 +130,119 @@
         <div class="feature-item">💳 روش‌های پرداخت متنوع</div>
     </section>
 
-    <!-- اسکریپت برای کارکرد سبد خرید -->
+    <!-- 🌟 فوتر (پایین صفحه) 🌟 -->
+    <footer class="main-footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <h3>ابزار آریس</h3>
+                <p>فروشگاه تخصصی ابزارآلات شارژی و برقی. با بیش از ۱۰ سال سابقه در خدمت شما هستیم.</p>
+            </div>
+            <div class="footer-col">
+                <h3>دسترسی سریع</h3>
+                <ul>
+                    <li><a href="#">درباره ما</a></li>
+                    <li><a href="#">تماس با ما</a></li>
+                    <li><a href="#">قوانین و مقررات</a></li>
+                    <li><a href="#">حریم خصوصی</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>خدمات مشتریان</h3>
+                <ul>
+                    <li><a href="#">پاسخ به سوالات متداول</a></li>
+                    <li><a href="#">رویه ارسال سفارش</a></li>
+                    <li><a href="#">شرایط بازگشت کالا</a></li>
+                    <li><a href="#">پیگیری سفارش</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>شبکه‌های اجتماعی</h3>
+                <div class="social-links">
+                    <a href="#">📸 اینستاگرام</a>
+                    <a href="#">✈️ تلگرام</a>
+                    <a href="#">💬 واتساپ</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>تمامی حقوق برای وب‌سایت ابزار آریس محفوظ است. © ۱۴۰۳</p>
+        </div>
+    </footer>
+
+    <!-- 🌟 دکمه شناور بازگشت به بالا و پشتیبانی 🌟 -->
+    <div class="floating-buttons">
+        <a href="#" class="support-btn" title="پشتیبانی واتساپ">💬</a>
+        <button class="scroll-top-btn" id="scrollTopBtn" title="بازگشت به بالا">⬆️</button>
+    </div>
+
+    <!-- 🌟 اسکریپت‌های سایت 🌟 -->
     <script>
+        // --- سبد خرید ---
         let cartCount = 0;
         function addToCart() {
             cartCount++;
             document.getElementById('cart-count').innerText = cartCount;
-            // افکت لرزش کوچک روی سبد خرید
             const cartBtn = document.querySelector('.cart-btn');
             cartBtn.style.transform = 'scale(1.2)';
             setTimeout(() => { cartBtn.style.transform = 'scale(1)'; }, 200);
-            alert('محصول به سبد خرید اضافه شد!');
         }
+
+        // --- دکمه بازگشت به بالا ---
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+        window.onscroll = function() {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                scrollTopBtn.style.display = "block";
+            } else {
+                scrollTopBtn.style.display = "none";
+            }
+        };
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // --- اسلایدر بنر خودکار ---
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.dot');
+
+        function showSlides() {
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            slideIndex++;
+            if (slideIndex >= slides.length) { slideIndex = 0; }
+            
+            slides[slideIndex].classList.add('active');
+            dots[slideIndex].classList.add('active');
+            
+            setTimeout(showSlides, 4000); // تغییر هر 4 ثانیه
+        }
+        
+        function currentSlide(n) {
+            slideIndex = n;
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            slides[slideIndex].classList.add('active');
+            dots[slideIndex].classList.add('active');
+        }
+        
+        // شروع اسلایدر
+        setTimeout(showSlides, 4000);
+
+        // --- انیمیشن اسکرول (ظاهر شدن بخش‌ها) ---
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        reveal(); // اجرای اولیه
     </script>
 </body>
 </html>
