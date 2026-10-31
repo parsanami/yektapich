@@ -33,13 +33,13 @@
             </div>
             <div class="header-center">
                 <div class="search-box">
-                    <input type="text" placeholder="جستجو">
+                    <input type="text" placeholder="جستجوی محصول...">
                     <button>🔍</button>
                 </div>
             </div>
             <div class="header-left">
                 <a href="#" class="login-btn">ورود / عضویت</a>
-                <a href="#" class="cart-btn">🛒 <span class="cart-count">0</span></a>
+                <a href="#" class="cart-btn">🛒 <span class="cart-count" id="cart-count">0</span></a>
                 <a href="#" class="buy-btn">خرید عمده</a>
             </div>
         </div>
@@ -97,6 +97,44 @@
         </div>
     </section>
 
+    <!-- 🌟 بخش جدید: پیشنهاد ویژه (محصولات) 🌟 -->
+    <section class="products container">
+        <div class="section-title">
+            <h2>پیشنهاد ویژه ابزار آریس</h2>
+            <a href="#">مشاهده همه</a>
+        </div>
+        <div class="product-grid">
+            <!-- محصول ۱ -->
+            <div class="product-card">
+                <div class="product-image">🪛</div> <!-- فعلاً از ایموجی استفاده شده، بعداً عکس می‌گذاریم -->
+                <h3>دریل شارژی آریس ۲۰ ولت</h3>
+                <p class="price">۲,۵۰۰,۰۰۰ تومان</p>
+                <button class="add-to-cart" onclick="addToCart()">افزودن به سبد 🛒</button>
+            </div>
+            <!-- محصول ۲ -->
+            <div class="product-card">
+                <div class="product-image">🔧</div>
+                <h3>آچار بکس ۴۰ پارچه</h3>
+                <p class="price">۱,۲۰۰,۰۰۰ تومان</p>
+                <button class="add-to-cart" onclick="addToCart()">افزودن به سبد 🛒</button>
+            </div>
+            <!-- محصول ۳ -->
+            <div class="product-card">
+                <div class="product-image">⚙️</div>
+                <h3>دستگاه پولیش زاویه‌ای</h3>
+                <p class="price">۳,۸۰۰,۰۰۰ تومان</p>
+                <button class="add-to-cart" onclick="addToCart()">افزودن به سبد 🛒</button>
+            </div>
+            <!-- محصول ۴ -->
+            <div class="product-card">
+                <div class="product-image">🛠️</div>
+                <h3>ست پیچ گوشتی ۱۰ عددی</h3>
+                <p class="price">۸۵۰,۰۰۰ تومان</p>
+                <button class="add-to-cart" onclick="addToCart()">افزودن به سبد 🛒</button>
+            </div>
+        </div>
+    </section>
+
     <!-- بخش مزایا (پایین صفحه) -->
     <section class="features container">
         <div class="feature-item">🚚 پرداخت، بسته‌بندی و ارسال</div>
@@ -106,5 +144,18 @@
         <div class="feature-item">💳 روش‌های پرداخت متنوع</div>
     </section>
 
+    <!-- اسکریپت برای کارکرد سبد خرید -->
+    <script>
+        let cartCount = 0;
+        function addToCart() {
+            cartCount++;
+            document.getElementById('cart-count').innerText = cartCount;
+            // افکت لرزش کوچک روی سبد خرید
+            const cartBtn = document.querySelector('.cart-btn');
+            cartBtn.style.transform = 'scale(1.2)';
+            setTimeout(() => { cartBtn.style.transform = 'scale(1)'; }, 200);
+            alert('محصول به سبد خرید اضافه شد!');
+        }
+    </script>
 </body>
 </html>
