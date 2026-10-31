@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ابزار آریس | فروشگاه تخصصی ابزارآلات</title>
+    <!-- لینک فونت وزیرمتن -->
     <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="style.css">
 </head>
@@ -31,7 +32,7 @@
             <div class="header-center">
                 <div class="search-box">
                     <input type="text" placeholder="جستجوی محصول...">
-                    <button>🔍</button>
+                    <button type="button">🔍</button>
                 </div>
             </div>
             <div class="header-left">
@@ -56,14 +57,12 @@
         </div>
     </nav>
 
-    <!-- 🌟 اسلایدر بنر (خودکار) 🌟 -->
+    <!-- اسلایدر بنر (خودکار) -->
     <section class="hero-slider container">
         <div class="slider-wrapper">
-            <!-- عکس اول -->
             <a href="#" class="slide active">
                 <img src="banner.jpg" alt="بنر ۱" class="banner-img">
             </a>
-            <!-- عکس دوم (برای اینکه اسلایدر کار کند، یک بنر دیگر با نام banner2.jpg آپلود کنید) -->
             <a href="#" class="slide">
                 <img src="banner.jpg" alt="بنر ۲" class="banner-img"> 
             </a>
@@ -93,6 +92,8 @@
             <h2>پیشنهاد ویژه ابزار آریس</h2>
             <a href="#">مشاهده همه</a>
         </div>
+        
+        <!-- گرید محصولات -->
         <div class="product-grid">
             <div class="product-card">
                 <div class="product-image">🪛</div>
@@ -130,7 +131,7 @@
         <div class="feature-item">💳 روش‌های پرداخت متنوع</div>
     </section>
 
-    <!-- 🌟 فوتر (پایین صفحه) 🌟 -->
+    <!-- فوتر (پایین صفحه) -->
     <footer class="main-footer">
         <div class="container footer-grid">
             <div class="footer-col">
@@ -169,13 +170,13 @@
         </div>
     </footer>
 
-    <!-- 🌟 دکمه شناور بازگشت به بالا و پشتیبانی 🌟 -->
+    <!-- دکمه شناور بازگشت به بالا و پشتیبانی -->
     <div class="floating-buttons">
         <a href="#" class="support-btn" title="پشتیبانی واتساپ">💬</a>
         <button class="scroll-top-btn" id="scrollTopBtn" title="بازگشت به بالا">⬆️</button>
     </div>
 
-    <!-- 🌟 اسکریپت‌های سایت 🌟 -->
+    <!-- اسکریپت‌های سایت -->
     <script>
         // --- سبد خرید ---
         let cartCount = 0;
@@ -215,7 +216,7 @@
             slides[slideIndex].classList.add('active');
             dots[slideIndex].classList.add('active');
             
-            setTimeout(showSlides, 4000); // تغییر هر 4 ثانیه
+            setTimeout(showSlides, 4000);
         }
         
         function currentSlide(n) {
@@ -226,10 +227,9 @@
             dots[slideIndex].classList.add('active');
         }
         
-        // شروع اسلایدر
         setTimeout(showSlides, 4000);
 
-        // --- انیمیشن اسکرول (ظاهر شدن بخش‌ها) ---
+        // --- انیمیشن اسکرول ---
         function reveal() {
             var reveals = document.querySelectorAll(".reveal");
             for (var i = 0; i < reveals.length; i++) {
@@ -242,7 +242,7 @@
             }
         }
         window.addEventListener("scroll", reveal);
-        reveal(); // اجرای اولیه
+        reveal();
     </script>
 </body>
 </html>
