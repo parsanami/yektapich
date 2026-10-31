@@ -7,65 +7,75 @@
 }
 
 body {
-    background-color: #f9f9f9;
+    background-color: #f4f6f9; /* رنگ پس‌زمینه کمی مدرن‌تر */
     color: #333;
+    overflow-x: hidden;
 }
 
 .container {
-    width: 90%;
+    width: 95%;
     max-width: 1200px;
     margin: 0 auto;
 }
 
+a {
+    transition: all 0.3s ease; /* افکت نرم برای همه لینک‌ها */
+}
+
 /* هدر بالایی */
 .top-bar {
-    background-color: #222;
+    background-color: #1a1a1a;
     color: #ccc;
     padding: 10px 0;
-    font-size: 13px;
+    font-size: 12px;
 }
 
 .top-bar .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
-.top-bar .phone span {
-    color: #ffcc00;
-}
-
-.top-links a {
-    color: #ccc;
-    text-decoration: none;
-    margin-left: 15px;
-}
+.top-bar .phone span { color: #ffcc00; }
+.top-links { display: flex; gap: 15px; }
+.top-links a { color: #ccc; text-decoration: none; }
+.top-links a:hover { color: #ffcc00; } /* افکت هاور روی لینک‌های بالا */
 
 /* هدر اصلی */
 .main-header {
     background-color: #fff;
     padding: 15px 0;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky; /* چسبیدن هدر به بالای صفحه */
+    top: 0;
+    z-index: 100;
 }
 
 .main-header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
-.header-right .logo {
-    max-height: 55px;
-    width: auto;
-    display: block;
-}
+.header-right .logo { max-height: 45px; width: auto; display: block; }
 
 .search-box {
     display: flex;
     background: #f1f1f1;
-    border-radius: 5px;
-    padding: 5px 15px;
-    width: 400px;
+    border-radius: 8px;
+    padding: 8px 15px;
+    width: 100%;
+    max-width: 400px;
+    transition: 0.3s;
+}
+
+.search-box:focus-within { /* وقتی روی سرچ کلیک شود، حاشیه زرد می‌شود */
+    background: #fff;
+    box-shadow: 0 0 0 2px #ffcc00;
 }
 
 .search-box input {
@@ -76,36 +86,40 @@ body {
     font-family: inherit;
 }
 
-.search-box button {
-    border: none;
-    background: transparent;
-    cursor: pointer;
+.header-left { display: flex; align-items: center; gap: 15px; }
+.header-left a { text-decoration: none; color: #333; font-size: 13px; }
+.header-left a:hover { color: #e6b800; }
+
+.cart-btn {
+    font-size: 18px;
+    position: relative;
+    transition: transform 0.2s;
 }
 
-.header-left {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.header-left a {
-    text-decoration: none;
-    color: #333;
-    font-size: 14px;
+.cart-count {
+    font-size: 12px;
+    background: #ffcc00;
+    color: #000;
+    padding: 2px 6px;
+    border-radius: 50%;
+    font-weight: bold;
 }
 
 .buy-btn {
     background-color: #ffcc00;
-    padding: 10px 20px;
-    border-radius: 20px;
+    padding: 8px 20px;
+    border-radius: 8px;
     font-weight: bold;
+    color: #000 !important;
 }
+
+.buy-btn:hover { background-color: #e6b800; }
 
 /* منوی ناوبری */
 .main-nav {
     background-color: #fff;
-    border-top: 1px solid #eee;
     border-bottom: 1px solid #eee;
+    overflow-x: auto;
 }
 
 .main-nav ul {
@@ -114,78 +128,173 @@ body {
     padding: 15px 0;
     gap: 25px;
     font-size: 14px;
+    white-space: nowrap;
 }
 
 .main-nav a {
     text-decoration: none;
     color: #555;
+    padding-bottom: 5px;
 }
 
-/* استایل‌های بنر (فقط عکس) */
+.main-nav a:hover { /* افکت خط زیر منو */
+    color: #000;
+    border-bottom: 2px solid #ffcc00;
+}
+
+/* بنر */
 .hero-slider {
-    margin-top: 30px;
-    border-radius: 15px;
+    margin-top: 25px;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     line-height: 0;
 }
 
-.banner-img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
+.banner-img { width: 100%; height: auto; display: block; transition: transform 0.5s; }
+.hero-slider:hover .banner-img { transform: scale(1.02); } /* افکت زوم ملایم روی بنر */
 
 /* دسته‌بندی محصولات */
 .categories {
     background: #fff;
-    margin-top: 30px;
-    border-radius: 15px;
-    padding: 30px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    margin-top: 25px;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
     text-align: center;
 }
 
-.categories h2 {
-    margin-bottom: 30px;
-    font-size: 20px;
-}
+.categories h2 { margin-bottom: 25px; font-size: 20px; }
 
 .category-grid {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 15px;
 }
 
 .cat-item {
-    width: 120px;
+    padding: 10px;
+    border-radius: 10px;
+    transition: 0.3s;
+    cursor: pointer;
 }
 
-/* آیکون‌های موقت (چون عکس ندارید) */
-.icon-placeholder {
-    font-size: 40px;
+.cat-item:hover { /* افکت هاور روی دسته‌بندی */
+    background: #fdf8e9;
+    transform: translateY(-5px);
+}
+
+.icon-placeholder { font-size: 40px; margin-bottom: 10px; }
+.cat-item p { font-size: 13px; font-weight: bold; }
+
+/* 🌟 بخش پیشرفته: محصولات (پیشنهاد ویژه) 🌟 */
+.products { margin-top: 40px; }
+
+.section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.section-title h2 { font-size: 20px; color: #222; }
+.section-title a { color: #888; text-decoration: none; font-size: 14px; }
+.section-title a:hover { color: #ffcc00; }
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 ستون در دسکتاپ */
+    gap: 20px;
+}
+
+.product-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.product-card:hover { /* افکت کارت محصول */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    border-color: #ffcc00;
+    transform: translateY(-5px);
+}
+
+.product-image {
+    font-size: 60px;
+    margin-bottom: 15px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.product-card h3 {
+    font-size: 14px;
     margin-bottom: 10px;
+    color: #333;
+    height: 40px; /* فیکس کردن ارتفاع عنوان */
 }
 
-.cat-item p {
-    font-size: 13px;
+.product-card .price {
+    font-size: 16px;
     font-weight: bold;
+    color: #000;
+    margin-bottom: 15px;
+}
+
+.add-to-cart {
+    width: 100%;
+    padding: 10px;
+    background: #ffcc00;
+    border: none;
+    border-radius: 8px;
+    font-family: inherit;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.add-to-cart:hover {
+    background: #e6b800;
+    box-shadow: 0 4px 10px rgba(255, 204, 0, 0.4);
 }
 
 /* بخش مزایا */
 .features {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     margin-top: 40px;
-    padding: 20px 0;
-    border-top: 1px solid #ddd;
+    padding: 25px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    gap: 15px;
 }
 
-.feature-item {
-    font-size: 13px;
-    color: #666;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+.feature-item { font-size: 13px; color: #555; display: flex; align-items: center; gap: 8px; }
+
+/* =========================================
+   تنظیمات موبایل (Media Queries)
+   ========================================= */
+@media (max-width: 992px) {
+    .product-grid { grid-template-columns: repeat(3, 1fr); }
+    .category-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 768px) {
+    .main-header .container { flex-direction: column; align-items: stretch; }
+    .header-right { display: flex; justify-content: center; }
+    .header-left { justify-content: center; flex-wrap: wrap; }
+    .product-grid { grid-template-columns: repeat(2, 1fr); }
+    .features { flex-direction: column; align-items: center; }
+    .section-title { flex-direction: column; gap: 10px; }
+}
+
+@media (max-width: 480px) {
+    .product-grid { grid-template-columns: 1fr; } /* در گوشی‌های کوچک 1 ستون */
+    .category-grid { grid-template-columns: repeat(2, 1fr); }
 }
