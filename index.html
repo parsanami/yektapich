@@ -6,170 +6,7 @@
     <title>ابزار آریس | فروشگاه تخصصی ابزارآلات</title>
     <!-- لینک فونت وزیرمتن -->
     <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
-    
-    <!-- استایل‌ها مستقیماً اینجا قرار گرفتند تا هیچوقت به هم نریزند -->
-    <style>
-        /* تنظیمات پایه */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Vazirmatn', sans-serif;
-        }
-
-        body {
-            background-color: #f4f6f9;
-            color: #333;
-            overflow-x: hidden;
-        }
-
-        a { text-decoration: none; transition: all 0.3s ease; }
-        ul { list-style: none; }
-
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
-
-        /* هدر بالایی */
-        .top-bar {
-            background-color: #1a1a1a;
-            color: #ccc;
-            padding: 10px 0;
-            font-size: 12px;
-        }
-        .top-bar .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
-        .top-bar .phone span { color: #ffcc00; }
-        .top-links { display: flex; gap: 15px; }
-        .top-links a { color: #ccc; }
-        .top-links a:hover { color: #ffcc00; }
-
-        /* هدر اصلی */
-        .main-header {
-            background-color: #fff;
-            padding: 15px 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        .main-header .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
-        .header-right .logo { max-height: 45px; display: block; }
-        .search-box { display: flex; background: #f1f1f1; border-radius: 8px; padding: 8px 15px; width: 100%; max-width: 400px; }
-        .search-box input { border: none; background: transparent; outline: none; width: 100%; font-family: inherit; }
-        .search-box button { border: none; background: transparent; cursor: pointer; }
-        .header-left { display: flex; align-items: center; gap: 15px; }
-        .header-left a { color: #333; font-size: 13px; }
-        .cart-btn { font-size: 18px; position: relative; }
-        .cart-count { font-size: 12px; background: #ffcc00; color: #000; padding: 2px 6px; border-radius: 50%; font-weight: bold; }
-        .buy-btn { background-color: #ffcc00; padding: 8px 20px; border-radius: 8px; font-weight: bold; color: #000 !important; }
-
-        /* منوی ناوبری */
-        .main-nav { background-color: #fff; border-bottom: 1px solid #eee; overflow-x: auto; }
-        .main-nav ul { display: flex; padding: 15px 0; gap: 25px; font-size: 14px; white-space: nowrap; }
-        .main-nav a { color: #555; padding-bottom: 5px; }
-        .main-nav a:hover { color: #000; border-bottom: 2px solid #ffcc00; }
-
-        /* اسلایدر بنر */
-        .hero-slider { margin-top: 25px; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); background: #000; }
-        .slide { display: none; width: 100%; }
-        .slide.active { display: block; }
-        .banner-img { width: 100%; height: auto; display: block; }
-
-        /* دسته‌بندی محصولات */
-        .categories { background: #fff; margin-top: 25px; border-radius: 12px; padding: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); text-align: center; }
-        .categories h2 { margin-bottom: 25px; font-size: 20px; }
-        .category-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 15px; }
-        .cat-item { padding: 15px; border-radius: 10px; background: #fafafa; cursor: pointer; }
-        .icon-placeholder { font-size: 40px; margin-bottom: 10px; }
-        .cat-item p { font-size: 13px; font-weight: bold; }
-
-        /* 🌟 بخش محصولات (با استفاده از Flexbox برای اطمینان ۱۰۰٪) 🌟 */
-        .products { margin-top: 40px; }
-        .section-title { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
-        .section-title h2 { font-size: 20px; color: #222; }
-        .section-title a { color: #888; font-size: 14px; }
-
-        .product-grid { 
-            display: flex; 
-            flex-wrap: wrap; 
-            gap: 20px; 
-            justify-content: flex-start;
-        }
-
-        .product-card { 
-            background: #fff; 
-            border-radius: 12px; 
-            padding: 20px; 
-            box-shadow: 0 4px 15px rgba(0,0,0,0.04); 
-            text-align: center; 
-            border: 1px solid #eee;
-            display: flex;
-            flex-direction: column;
-            /* محاسبه دقیق عرض برای 4 ستون */
-            width: calc(25% - 15px); 
-        }
-
-        .product-image { font-size: 50px; margin-bottom: 15px; background: #f8f9fa; border-radius: 10px; padding: 20px; }
-        .product-card h3 { font-size: 14px; margin-bottom: 10px; color: #333; height: 42px; overflow: hidden; }
-        .product-card .price { font-size: 16px; font-weight: bold; color: #000; margin-bottom: 15px; }
-        .product-card .price span { font-size: 12px; color: #777; font-weight: normal; }
-        
-        .add-to-cart { 
-            width: 100%; 
-            padding: 10px; 
-            background: #ffcc00; 
-            border: none; 
-            border-radius: 8px; 
-            font-family: inherit; 
-            font-weight: bold; 
-            cursor: pointer; 
-            margin-top: auto;
-        }
-
-        /* مزایا */
-        .features { display: flex; justify-content: space-between; flex-wrap: wrap; margin-top: 40px; padding: 25px; background: #fff; border-radius: 12px; gap: 15px; }
-        .feature-item { font-size: 13px; color: #555; display: flex; align-items: center; gap: 8px; }
-
-        /* فوتر */
-        .main-footer { background: #222; color: #ccc; margin-top: 50px; padding-top: 40px; }
-        .footer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; padding-bottom: 30px; }
-        .footer-col h3 { color: #fff; font-size: 16px; margin-bottom: 15px; }
-        .footer-col p { font-size: 13px; line-height: 1.8; color: #aaa; }
-        .footer-col ul li { margin-bottom: 10px; }
-        .footer-col ul a { color: #aaa; font-size: 13px; }
-        .footer-bottom { background: #1a1a1a; text-align: center; padding: 15px 0; font-size: 12px; color: #777; }
-
-        /* دکمه‌های شناور */
-        .floating-buttons { position: fixed; bottom: 30px; left: 30px; display: flex; flex-direction: column; gap: 15px; z-index: 999; }
-        .support-btn { background: #25D366; color: #fff; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; }
-        .scroll-top-btn { background: #333; color: #fff; border: none; width: 50px; height: 50px; border-radius: 50%; display: none; cursor: pointer; font-size: 20px; }
-
-        /* =========================================
-           تنظیمات ریسپانسیو (موبایل و تبلت)
-           ========================================= */
-        @media (max-width: 1024px) {
-            .product-card { width: calc(33.33% - 14px); } /* 3 ستون */
-            .category-grid { grid-template-columns: repeat(3, 1fr); }
-            .footer-grid { grid-template-columns: repeat(2, 1fr); }
-        }
-
-        @media (max-width: 768px) {
-            .main-header .container { flex-direction: column; }
-            .header-right, .header-center, .header-left { justify-content: center; display: flex; }
-            .search-box { max-width: 100%; margin: 10px 0; }
-            .product-card { width: calc(50% - 10px); } /* 2 ستون */
-            .features { flex-direction: column; align-items: center; }
-            .footer-grid { grid-template-columns: 1fr; text-align: center; }
-        }
-
-        @media (max-width: 480px) {
-            .product-card { width: 100%; } /* 1 ستون در گوشی */
-            .category-grid { grid-template-columns: repeat(2, 1fr); }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -220,15 +57,24 @@
         </div>
     </nav>
 
-    <!-- بنر اصلی -->
+    <!-- اسلایدر بنر (خودکار) -->
     <section class="hero-slider container">
-        <div class="slide active">
-            <img src="banner.jpg" alt="بنر" class="banner-img">
+        <div class="slider-wrapper">
+            <a href="#" class="slide active">
+                <img src="banner.jpg" alt="بنر ۱" class="banner-img">
+            </a>
+            <a href="#" class="slide">
+                <img src="banner.jpg" alt="بنر ۲" class="banner-img"> 
+            </a>
+        </div>
+        <div class="slider-dots">
+            <span class="dot active" onclick="currentSlide(0)"></span>
+            <span class="dot" onclick="currentSlide(1)"></span>
         </div>
     </section>
 
     <!-- دسته‌بندی محصولات -->
-    <section class="categories container">
+    <section class="categories container reveal">
         <h2>دسته بندی محصولات</h2>
         <div class="category-grid">
             <div class="cat-item"><div class="icon-placeholder">🛠️</div><p>پرق آلات</p></div>
@@ -241,12 +87,13 @@
     </section>
 
     <!-- پیشنهاد ویژه -->
-    <section class="products container">
+    <section class="products container reveal">
         <div class="section-title">
             <h2>پیشنهاد ویژه ابزار آریس</h2>
             <a href="#">مشاهده همه</a>
         </div>
         
+        <!-- گرید محصولات -->
         <div class="product-grid">
             <div class="product-card">
                 <div class="product-image">🪛</div>
@@ -276,7 +123,7 @@
     </section>
 
     <!-- مزایا -->
-    <section class="features container">
+    <section class="features container reveal">
         <div class="feature-item">🚚 پرداخت، بسته‌بندی و ارسال</div>
         <div class="feature-item">📦 ضمانت بازگشت کالا</div>
         <div class="feature-item">🛡️ ضمانت اصالت کالا</div>
@@ -284,7 +131,7 @@
         <div class="feature-item">💳 روش‌های پرداخت متنوع</div>
     </section>
 
-    <!-- فوتر -->
+    <!-- فوتر (پایین صفحه) -->
     <footer class="main-footer">
         <div class="container footer-grid">
             <div class="footer-col">
@@ -297,6 +144,7 @@
                     <li><a href="#">درباره ما</a></li>
                     <li><a href="#">تماس با ما</a></li>
                     <li><a href="#">قوانین و مقررات</a></li>
+                    <li><a href="#">حریم خصوصی</a></li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -305,13 +153,14 @@
                     <li><a href="#">پاسخ به سوالات متداول</a></li>
                     <li><a href="#">رویه ارسال سفارش</a></li>
                     <li><a href="#">شرایط بازگشت کالا</a></li>
+                    <li><a href="#">پیگیری سفارش</a></li>
                 </ul>
             </div>
             <div class="footer-col">
                 <h3>شبکه‌های اجتماعی</h3>
                 <div class="social-links">
-                    <a href="#">📸 اینستاگرام</a><br>
-                    <a href="#">✈️ تلگرام</a><br>
+                    <a href="#">📸 اینستاگرام</a>
+                    <a href="#">✈️ تلگرام</a>
                     <a href="#">💬 واتساپ</a>
                 </div>
             </div>
@@ -321,21 +170,25 @@
         </div>
     </footer>
 
-    <!-- دکمه‌های شناور -->
+    <!-- دکمه شناور بازگشت به بالا و پشتیبانی -->
     <div class="floating-buttons">
-        <a href="#" class="support-btn" title="پشتیبانی">💬</a>
+        <a href="#" class="support-btn" title="پشتیبانی واتساپ">💬</a>
         <button class="scroll-top-btn" id="scrollTopBtn" title="بازگشت به بالا">⬆️</button>
     </div>
 
+    <!-- اسکریپت‌های سایت -->
     <script>
-        // سبد خرید
+        // --- سبد خرید ---
         let cartCount = 0;
         function addToCart() {
             cartCount++;
             document.getElementById('cart-count').innerText = cartCount;
+            const cartBtn = document.querySelector('.cart-btn');
+            cartBtn.style.transform = 'scale(1.2)';
+            setTimeout(() => { cartBtn.style.transform = 'scale(1)'; }, 200);
         }
 
-        // دکمه بازگشت به بالا
+        // --- دکمه بازگشت به بالا ---
         const scrollTopBtn = document.getElementById('scrollTopBtn');
         window.onscroll = function() {
             if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
@@ -347,6 +200,49 @@
         scrollTopBtn.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
+
+        // --- اسلایدر بنر خودکار ---
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.dot');
+
+        function showSlides() {
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            slideIndex++;
+            if (slideIndex >= slides.length) { slideIndex = 0; }
+            
+            slides[slideIndex].classList.add('active');
+            dots[slideIndex].classList.add('active');
+            
+            setTimeout(showSlides, 4000);
+        }
+        
+        function currentSlide(n) {
+            slideIndex = n;
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            slides[slideIndex].classList.add('active');
+            dots[slideIndex].classList.add('active');
+        }
+        
+        setTimeout(showSlides, 4000);
+
+        // --- انیمیشن اسکرول ---
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        reveal();
     </script>
 </body>
 </html>
