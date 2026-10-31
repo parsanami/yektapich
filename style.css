@@ -212,3 +212,23 @@ body {
     align-items: center;
     gap: 10px;
 }
+/* کدهای مربوط به لوگو */
+.header-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-right .logo {
+    max-height: 50px; /* حداکثر ارتفاع لوگو */
+    width: auto;      /* حفظ نسبت تصویر */
+    display: block;
+}
+
+/* اگر فایل CSS اصلی شما کدهای هدر را ندارد، این‌ها را هم اضافه کنید تا چیدمان به هم نریزد */
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
