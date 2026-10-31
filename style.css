@@ -32,7 +32,7 @@ body {
 }
 
 .top-bar .phone span {
-    color: #ffcc00; /* رنگ زرد */
+    color: #ffcc00;
 }
 
 .top-links a {
@@ -44,7 +44,7 @@ body {
 /* هدر اصلی */
 .main-header {
     background-color: #fff;
-    padding: 20px 0;
+    padding: 15px 0;
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
@@ -54,8 +54,10 @@ body {
     align-items: center;
 }
 
-.logo {
-    height: 50px;
+.header-right .logo {
+    max-height: 55px;
+    width: auto;
+    display: block;
 }
 
 .search-box {
@@ -119,83 +121,28 @@ body {
     color: #555;
 }
 
-/* استایل‌های مربوط به بخش بنر (اسلایدر) */
+/* استایل‌های بنر (فقط عکس) */
 .hero-slider {
     margin-top: 30px;
-    position: relative;
     border-radius: 15px;
-    overflow: hidden; /* برای اینکه گوشه‌های عکس گرد شوند */
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    line-height: 0;
 }
 
 .banner-img {
     width: 100%;
     height: auto;
     display: block;
-    object-fit: cover;
-}
-
-.slide-text {
-    position: absolute;
-    top: 50%;
-    right: 8%; /* فاصله از سمت راست */
-    transform: translateY(-50%); /* قرارگیری دقیق در وسط عمودی */
-    color: #fff; /* رنگ متن سفید */
-    text-align: right;
-}
-
-.slide-text h1 {
-    font-size: 32px;
-    margin-bottom: 10px;
-    font-weight: bold;
-}
-
-.slide-text p {
-    font-size: 16px;
-    margin-bottom: 20px;
-    opacity: 0.9;
-}
-
-.btn-yellow {
-    background-color: #ffcc00;
-    color: #333;
-    padding: 12px 25px;
-    border-radius: 30px;
-    text-decoration: none;
-    display: inline-block;
-    font-weight: bold;
-    transition: background-color 0.3s;
-}
-
-.btn-yellow:hover {
-    background-color: #e6b800; /* تغییر رنگ دکمه هنگام هاور */
-}
-
-.slide-text h1 {
-    font-size: 32px;
-    margin-bottom: 10px;
-}
-
-.btn-yellow {
-    background-color: #ffcc00;
-    color: #333;
-    padding: 10px 20px;
-    border-radius: 30px;
-    text-decoration: none;
-    display: inline-block;
-    margin-top: 15px;
-    font-weight: bold;
 }
 
 /* دسته‌بندی محصولات */
 .categories {
     background: #fff;
-    margin-top: -40px; /* برای اینکه روی بنر بیاید */
-    position: relative;
-    z-index: 10;
+    margin-top: 30px;
     border-radius: 15px;
     padding: 30px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
     text-align: center;
 }
 
@@ -215,10 +162,9 @@ body {
     width: 120px;
 }
 
-.cat-item img {
-    width: 80px;
-    height: 80px;
-    object-fit: contain;
+/* آیکون‌های موقت (چون عکس ندارید) */
+.icon-placeholder {
+    font-size: 40px;
     margin-bottom: 10px;
 }
 
@@ -242,24 +188,4 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
-}
-/* کدهای مربوط به لوگو */
-.header-right {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.header-right .logo {
-    max-height: 50px; /* حداکثر ارتفاع لوگو */
-    width: auto;      /* حفظ نسبت تصویر */
-    display: block;
-}
-
-/* اگر فایل CSS اصلی شما کدهای هدر را ندارد، این‌ها را هم اضافه کنید تا چیدمان به هم نریزد */
-.main-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 0;
 }
