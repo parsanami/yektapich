@@ -119,25 +119,56 @@ body {
     color: #555;
 }
 
-/* اسلایدر / بنر */
+/* استایل‌های مربوط به بخش بنر (اسلایدر) */
 .hero-slider {
     margin-top: 30px;
     position: relative;
     border-radius: 15px;
-    overflow: hidden;
+    overflow: hidden; /* برای اینکه گوشه‌های عکس گرد شوند */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
-.hero-slider img {
+.banner-img {
     width: 100%;
+    height: auto;
     display: block;
+    object-fit: cover;
 }
 
 .slide-text {
     position: absolute;
     top: 50%;
-    right: 10%;
-    transform: translateY(-50%);
-    color: #fff;
+    right: 8%; /* فاصله از سمت راست */
+    transform: translateY(-50%); /* قرارگیری دقیق در وسط عمودی */
+    color: #fff; /* رنگ متن سفید */
+    text-align: right;
+}
+
+.slide-text h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.slide-text p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.btn-yellow {
+    background-color: #ffcc00;
+    color: #333;
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn-yellow:hover {
+    background-color: #e6b800; /* تغییر رنگ دکمه هنگام هاور */
 }
 
 .slide-text h1 {
