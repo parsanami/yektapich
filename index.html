@@ -8,8 +8,6 @@
     <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="style.css">
 </head>
-<!-- مسیر عکس لوگو -->
-<img src="images/logo.png" alt="لوگو ابزار آریس" class="logo">
 <body>
 
     <!-- هدر بالایی (نوار مشکی) -->
@@ -29,7 +27,10 @@
     <header class="main-header">
         <div class="container">
             <div class="header-right">
-                <img src="images/logo.png" alt="لوگو ابزار آریس" class="logo">
+                <!-- لوگو اینجا داخل بادی و با مسیر صحیح قرار گرفت -->
+                <a href="#">
+                    <img src="logo.png" alt="لوگو ابزار آریس" class="logo">
+                </a>
             </div>
             <div class="header-center">
                 <div class="search-box">
@@ -62,11 +63,13 @@
     <!-- بنر اصلی (اسلایدر) -->
     <section class="hero-slider container">
         <div class="slide">
-            <img src="images/hero-banner.jpg" alt="ابزارهای شارژی آریس">
-            <div class="slide-text">
-                <h1>ابزارهای شارژی آریس</h1>
-                <p>یک باتری برای همه ابزارهای آریس کافیه!</p>
-                <a href="#" class="btn-yellow">مشاهده و خرید ←</a>
+            <!-- اگر بنر دارید مسیر آن را اینجا وارد کنید. فعلاً یک رنگ جایگزین در CSS قرار دادیم -->
+            <div class="banner-placeholder">
+                <div class="slide-text">
+                    <h1>ابزارهای شارژی آریس</h1>
+                    <p>یک باتری برای همه ابزارهای آریس کافیه!</p>
+                    <a href="#" class="btn-yellow">مشاهده و خرید ←</a>
+                </div>
             </div>
         </div>
     </section>
@@ -76,27 +79,27 @@
         <h2>دسته بندی محصولات</h2>
         <div class="category-grid">
             <div class="cat-item">
-                <img src="images/icon-tools.png" alt="پرق آلات">
+                <div class="icon-placeholder">🛠️</div>
                 <p>پرق آلات</p>
             </div>
             <div class="cat-item">
-                <img src="images/icon-helmet.png" alt="ابزار و تجهیزات ایمنی">
+                <div class="icon-placeholder">⛑️</div>
                 <p>ابزار و تجهیزات ایمنی</p>
             </div>
             <div class="cat-item">
-                <img src="images/icon-measure.png" alt="ابزار اندازه گیری">
+                <div class="icon-placeholder">📏</div>
                 <p>ابزار اندازه گیری</p>
             </div>
             <div class="cat-item">
-                <img src="images/icon-battery.png" alt="لوازم جانبی ابزار آلات">
+                <div class="icon-placeholder">🔋</div>
                 <p>لوازم جانبی ابزار آلات</p>
             </div>
             <div class="cat-item">
-                <img src="images/icon-handtools.png" alt="ابزار دستی">
+                <div class="icon-placeholder">🔧</div>
                 <p>ابزار دستی</p>
             </div>
             <div class="cat-item">
-                <img src="images/icon-charge-tools.png" alt="ابزار برقی و شارژی">
+                <div class="icon-placeholder">🪛</div>
                 <p>ابزار برقی و شارژی</p>
             </div>
         </div>
