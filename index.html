@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ابزار آریس | فروشگاه تخصصی ابزارآلات</title>
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- نوار پیشرفت اسکرول -->
+    <div class="progress-bar" id="progressBar"></div>
+
+    <!-- هدر بالایی -->
+    <header class="top-bar">
+        <div class="container">
+            <div class="phone">تماس با کارشناسان: <span>۰۹۱۲-۶۱۶۶۴</span></div>
+            <div class="top-links">
+                <a href="#">درباره ما</a>
+                <a href="#">سازمان‌ها</a>
+                <a href="#">ویژه همکار</a>
+                <a href="#">هدایای سازمانی</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- هدر اصلی -->
+    <header class="main-header">
+        <div class="container">
+            <div class="header-right">
+                <a href="#"><img src="logo.png" alt="ابزار آریس" class="logo" onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\'font-size:24px;font-weight:800;color:#f97316\'>ابزار آریس</span>'"></a>
+            </div>
+            <div class="header-center">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="جستجوی محصول...">
+                    <button type="button">🔍</button>
+                </div>
+            </div>
+            <div class="header-left">
+                <button class="login-btn" id="loginBtn">ورود / عضویت</button>
+                <a href="#" class="cart-btn" id="cartBtn">
+                    🛒 <span class="cart-count" id="cart-count">0</span>
+                </a>
+                <a href="#" class="buy-btn">خرید عمده</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- منوی ناوبری -->
+    <nav class="main-nav">
+        <div class="container">
+            <ul>
+                <li><a href="#">ابزار برقی و شارژی</a></li>
+                <li><a href="#">ابزار دستی</a></li>
+                <li><a href="#">لوازم جانبی ابزار آلات</a></li>
+                <li><a href="#">ابزار ساختمانی</a></li>
+                <li><a href="#">پرق آلات</a></li>
+                <li><a href="#">ابزار اندازه گیری</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ========== بنر اصلی سایت (دقیقاً به اندازه اصلی خودش) ========== -->
+    <section class="container reveal" style="margin-top: 24px; margin-bottom: 40px;">
+        <div class="my-custom-slider">
+            <!-- 📌 مسیر عکس شما -->
+            <img src="Imges/0fbe0bf3-79b2-4be1-899b-d1cb0530a912.jpg" 
+                 alt="ابزار آریس" 
+                 class="my-custom-img">
+        </div>
+    </section>
+
+    <!-- دسته‌بندی محصولات -->
+    <section class="categories container reveal">
+        <h2>دسته بندی محصولات</h2>
+        <div class="category-grid">
+            <div class="cat-item"><div class="icon-placeholder">🛠️</div><p>پرق آلات</p></div>
+            <div class="cat-item"><div class="icon-placeholder">⛑️</div><p>تجهیزات ایمنی</p></div>
+            <div class="cat-item"><div class="icon-placeholder">📏</div><p>ابزار اندازه گیری</p></div>
+            <div class="cat-item"><div class="icon-placeholder">🔋</div><p>لوازم جانبی</p></div>
+            <div class="cat-item"><div class="icon-placeholder">🔧</div><p>ابزار دستی</p></div>
+            <div class="cat-item"><div class="icon-placeholder">🪛</div><p>ابزار برقی</p></div>
+        </div>
+    </section>
+
+    <!-- پیشنهاد ویژه -->
+    <section class="products container reveal">
+        <div class="section-title">
+            <h2>پیشنهاد ویژه ابزار آریس</h2>
+            <a href="#">مشاهده همه</a>
+        </div>
+        <div class="product-grid" id="productGrid">
+            <!-- کارت‌ها توسط JS رندر می‌شوند -->
+        </div>
+    </section>
+
+    <!-- مزایا -->
+    <section class="features container reveal">
+        <div class="feature-item">🚚 پرداخت، بسته‌بندی و ارسال</div>
+        <div class="feature-item">📦 ضمانت بازگشت کالا</div>
+        <div class="feature-item">🛡️ ضمانت اصالت کالا</div>
+        <div class="feature-item">🎧 مشاوره تخصصی رایگان</div>
+        <div class="feature-item">💳 روش‌های پرداخت متنوع</div>
+    </section>
+
+    <!-- فوتر -->
+    <footer class="main-footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <h3>ابزار آریس</h3>
+                <p>فروشگاه تخصصی ابزارآلات شارژی و برقی. با بیش از ۱۰ سال سابقه در خدمت شما هستیم.</p>
+            </div>
+            <div class="footer-col">
+                <h3>دسترسی سریع</h3>
+                <ul>
+                    <li><a href="#">درباره ما</a></li>
+                    <li><a href="#">تماس با ما</a></li>
+                    <li><a href="#">قوانین و مقررات</a></li>
+                    <li><a href="#">حریم خصوصی</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>خدمات مشتریان</h3>
+                <ul>
+                    <li><a href="#">سوالات متداول</a></li>
+                    <li><a href="#">رویه ارسال سفارش</a></li>
+                    <li><a href="#">شرایط بازگشت کالا</a></li>
+                    <li><a href="#">پیگیری سفارش</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                           <h3>شبکه‌های اجتماعی</h3>
+                <div class="social-links">
+                    <!-- لینک اینستاگرام: آیدی خود را جایگزین your_instagram_id کنید -->
+                    <a href="https://instagram.com/your_instagram_id" target="_blank" class="social-btn instagram" title="اینستاگرام">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    </a>
+
+                    <!-- لینک تلگرام: آیدی خود را جایگزین your_telegram_id کنید -->
+                    <a href="https://t.me/TLYektaPich" target="_blank" class="social-btn telegram" title="تلگرام">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+                    </a>
+
+                    <!-- لینک واتساپ: شماره خود را با کد کشور (بدون صفر) جایگزین کنید -->
+                    <a href="https://wa.me/989121234567" target="_blank" class="social-btn whatsapp" title="واتساپ">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    </a>
+                </div>
+        <div class="footer-bottom">
+            <p>تمامی حقوق برای وب‌سایت ابزار آریس محفوظ است. © ۱۴۰۳</p>
+        </div>
+          
+    </footer>
+
+    <!-- پنجره ورود / عضویت (Modal) -->
+    <div class="modal-overlay" id="loginModal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeLoginModal">✕</button>
+            <h2>ورود به حساب کاربری</h2>
+            <p class="modal-subtitle">برای خرید و مدیریت سفارشات وارد شوید</p>
+            <form id="loginForm">
+                <input type="text" placeholder="شماره موبایل یا ایمیل" required>
+                <input type="password" placeholder="رمز عبور" required>
+                <button type="submit" class="modal-btn">ورود به حساب</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- سبد خرید بازشو (Offcanvas) -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <aside class="cart-drawer" id="cartDrawer">
+        <div class="cart-header">
+            <h3>🛒 سبد خرید شما</h3>
+            <button class="cart-close" id="cartClose">✕</button>
+        </div>
+        <div class="cart-body" id="cartBody">
+            <p class="cart-empty">سبد خرید شما خالی است.</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total-row">
+                <span>جمع کل:</span>
+                <strong id="cartTotal">۰ تومان</strong>
+            </div>
+            <button class="checkout-btn">تکمیل خرید</button>
+        </div>
+    </aside>
+
+    <!-- دکمه شناور -->
+    <div class="floating-buttons">
+        <a href="#" class="support-btn" title="پشتیبانی واتساپ">💬</a>
+        <button class="scroll-top-btn" id="scrollTopBtn" title="بازگشت به بالا">⬆️</button>
+    </div>
+
+    <!-- Toast -->
+    <div class="toast" id="toast"></div>
+
+    <script>
+        // ================== نوار پیشرفت اسکرول ==================
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById("progressBar").style.width = scrolled + "%";
+        });
+
+        // ================== محصولات و جستجو ==================
+        const products = [
+            { id: 1, title: "دریل شارژی آریس ۲۰ ولت", price: 2500000, icon: "🪛" },
+            { id: 2, title: "آچار بکس ۴۰ پارچه", price: 1200000, icon: "🔧" },
+            { id: 3, title: "دستگاه پولیش زاویه‌ای", price: 3800000, icon: "⚙️" },
+            { id: 4, title: "ست پیچ گوشتی ۱۰ عددی", price: 850000, icon: "🛠️" },
+            { id: 5, title: "چکش برقی حرفه‌ای", price: 2100000, icon: "🔨" },
+            { id: 6, title: "ست انبر و آچار", price: 640000, icon: "🧰" },
+            { id: 7, title: "اره برقی دستی", price: 3200000, icon: "🪚" },
+            { id: 8, title: "جعبه ابزار ۵۰ پارچه", price: 1750000, icon: "🧰" }
+        ];
+
+        const productGrid = document.getElementById("productGrid");
+
+        function renderProducts(list) {
+            productGrid.innerHTML = "";
+            if(list.length === 0) {
+                productGrid.innerHTML = "<p style='grid-column: 1/-1; text-align:center; padding: 20px; color: #64748b;'>محصولی یافت نشد.</p>";
+                return;
+            }
+            list.forEach(p => {
+                const card = document.createElement("div");
+                card.className = "product-card";
+                card.innerHTML = `
+                    <button class="fav-btn" data-id="${p.id}">🤍</button>
+                    <div class="product-image">${p.icon}</div>
+                    <h3>${p.title}</h3>
+                    <p class="price">${p.price.toLocaleString("fa-IR")} <span>تومان</span></p>
+                    <button class="add-to-cart" data-id="${p.id}">افزودن به سبد 🛒</button>
+                `;
+                productGrid.appendChild(card);
+            });
+        }
+        renderProducts(products);
+
+        // جستجوی زنده
+        document.getElementById("searchInput").addEventListener("input", (e) => {
+            const term = e.target.value.trim().toLowerCase();
+            const filtered = products.filter(p => p.title.toLowerCase().includes(term));
+            renderProducts(filtered);
+        });
+
+        // علاقه‌مندی
+        productGrid.addEventListener("click", (e) => {
+            const favBtn = e.target.closest(".fav-btn");
+            if (favBtn) {
+                if (favBtn.classList.contains("active")) {
+                    favBtn.classList.remove("active");
+                    favBtn.textContent = "🤍";
+                } else {
+                    favBtn.classList.add("active");
+                    favBtn.textContent = "❤️";
+                }
+                return;
+            }
+        });
+
+        // ================== سبد خرید ==================
+        const cart = {}; 
+        const cartCountEl = document.getElementById("cart-count");
+        const cartBody = document.getElementById("cartBody");
+        const cartTotalEl = document.getElementById("cartTotal");
+        const cartDrawer = document.getElementById("cartDrawer");
+        const cartOverlay = document.getElementById("cartOverlay");
+
+        function updateCartUI() {
+            const totalQty = Object.values(cart).reduce((a, b) => a + b, 0);
+            cartCountEl.textContent = totalQty;
+
+            const ids = Object.keys(cart);
+            if (ids.length === 0) {
+                cartBody.innerHTML = '<p class="cart-empty">سبد خرید شما خالی است.</p>';
+                cartTotalEl.textContent = "۰ تومان";
+                return;
+            }
+            let total = 0;
+            cartBody.innerHTML = "";
+            ids.forEach(id => {
+                const p = products.find(x => x.id == id);
+                const qty = cart[id];
+                total += p.price * qty;
+                const row = document.createElement("div");
+                row.className = "cart-item";
+                row.innerHTML = `
+                    <div class="cart-item-icon">${p.icon}</div>
+                    <div class="cart-item-info">
+                        <h4>${p.title}</h4>
+                        <p>${p.price.toLocaleString("fa-IR")} تومان</p>
+                    </div>
+                    <div class="cart-item-qty">
+                        <button data-id="${id}" data-action="inc">+</button>
+                        <span>${qty}</span>
+                        <button data-id="${id}" data-action="dec">−</button>
+                    </div>
+                    <button class="cart-item-remove" data-id="${id}" data-action="remove">🗑</button>
+                `;
+                cartBody.appendChild(row);
+            });
+            cartTotalEl.textContent = total.toLocaleString("fa-IR") + " تومان";
+        }
+
+        function openCart() {
+            cartDrawer.classList.add("open");
+            cartOverlay.classList.add("show");
+            document.body.style.overflow = "hidden";
+        }
+        function closeCart() {
+            cartDrawer.classList.remove("open");
+            cartOverlay.classList.remove("show");
+            document.body.style.overflow = "";
+        }
+
+        document.getElementById("cartBtn").addEventListener("click", (e) => {
+            e.preventDefault();
+            openCart();
+        });
+        document.getElementById("cartClose").addEventListener("click", closeCart);
+        cartOverlay.addEventListener("click", closeCart);
+
+        cartBody.addEventListener("click", (e) => {
+            const btn = e.target.closest("button");
+            if (!btn) return;
+            const id = btn.dataset.id;
+            const action = btn.dataset.action;
+            if (action === "inc") cart[id]++;
+            else if (action === "dec") {
+                cart[id]--;
+                if (cart[id] <= 0) delete cart[id];
+            } else if (action === "remove") {
+                delete cart[id];
+            }
+            updateCartUI();
+        });
+
+        productGrid.addEventListener("click", (e) => {
+            const btn = e.target.closest(".add-to-cart");
+            if (!btn) return;
+            const id = btn.dataset.id;
+            cart[id] = (cart[id] || 0) + 1;
+            updateCartUI();
+            showToast("✅ محصول به سبد اضافه شد");
+            const cartBtn = document.querySelector(".cart-btn");
+            cartBtn.style.transform = "scale(1.25)";
+            setTimeout(() => cartBtn.style.transform = "scale(1)", 220);
+        });
+
+        // ================== پنجره ورود (Modal) ==================
+        const loginModal = document.getElementById("loginModal");
+        document.getElementById("loginBtn").addEventListener("click", () => {
+            loginModal.classList.add("show");
+        });
+        document.getElementById("closeLoginModal").addEventListener("click", () => {
+            loginModal.classList.remove("show");
+        });
+        loginModal.addEventListener("click", (e) => {
+            if (e.target === loginModal) loginModal.classList.remove("show");
+        });
+        document.getElementById("loginForm").addEventListener("submit", (e) => {
+            e.preventDefault();
+            showToast("✅ ورود با موفقیت انجام شد (شبیه‌سازی)");
+            loginModal.classList.remove("show");
+        });
+
+        // ================== Toast ==================
+        let toastTimer;
+        function showToast(msg) {
+            const t = document.getElementById("toast");
+            t.textContent = msg;
+            t.classList.add("show");
+            clearTimeout(toastTimer);
+            toastTimer = setTimeout(() => t.classList.remove("show"), 2200);
+        }
+
+        // ================== دکمه بازگشت به بالا ==================
+        const scrollTopBtn = document.getElementById("scrollTopBtn");
+        window.addEventListener("scroll", () => {
+            scrollTopBtn.style.display = window.scrollY > 300 ? "flex" : "none";
+        });
+        scrollTopBtn.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+
+        // ================== انیمیشن Reveal ==================
+        function reveal() {
+            document.querySelectorAll(".reveal").forEach(el => {
+                if (el.getBoundingClientRect().top < window.innerHeight - 100) {
+                    el.classList.add("active");
+                }
+            });
+        }
+        window.addEventListener("scroll", reveal);
+        reveal();
+    </script>
+</body>
+</html>
