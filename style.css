@@ -56,15 +56,15 @@ button { font-family: inherit; cursor: pointer; }
 .main-nav a { padding: 8px 14px; border-radius: 8px; font-size: 14px; font-weight: 600; color: var(--dark); transition: .25s; display: inline-block; }
 .main-nav a:hover { background: var(--orange); color: #fff; }
 
-/* ============ بنر اصلی ============ */
+/* ============ بنر اصلی (ساده و تمیز) ============ */
 .my-custom-slider {
     width: 100%;
-    border-radius: var(--radius);
+    border-radius: 8px;
     overflow: hidden;
-    box-shadow: var(--shadow);
-    background: #f1f5f9;
+    background: #f8fafc;
     margin: 0 auto;
     min-height: 200px;
+    /* بدون سایه، بدون حاشیه اضافه */
 }
 
 .my-custom-img {
