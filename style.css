@@ -56,22 +56,24 @@ button { font-family: inherit; }
 .main-nav a { padding: 8px 14px; border-radius: 8px; font-size: 14px; font-weight: 600; color: var(--dark); transition: .25s; display: inline-block; }
 .main-nav a:hover { background: var(--orange); color: #fff; }
 
-/* ============ بنر اصلی (دقیقاً اندازه اصلی عکس) ============ */
+/* ============ بنر اصلی (اصلاح‌شده) ============ */
 .my-custom-slider {
     width: 100%;
     border-radius: var(--radius);
     overflow: hidden;
     box-shadow: var(--shadow);
-    background: #f1f5f9; /* رنگ پس‌زمینه موقت */
+    background: #f1f5f9;
     margin: 0 auto;
-    /* هیچ ارتفاع یا نسبتی تعیین نمی‌کنیم تا عکس با ابعاد اصلی خودش بیاید */
+    min-height: 200px;
 }
 
 .my-custom-img {
     width: 100%;
-    height: auto; /* ارتفاع به صورت خودکار با نسبت اصلی عکس تنظیم می‌شود */
+    height: auto;
     display: block;
-    object-fit: contain; /* عکس بدون هیچ بریدگی نمایش داده می‌شود */
+    object-fit: contain;
+    opacity: 1 !important;
+    visibility: visible !important;
 }
 
 /* ============ دسته‌بندی ============ */
@@ -196,7 +198,8 @@ button { font-family: inherit; }
     .footer-grid { grid-template-columns: 1fr; }
     .top-links { display: none; }
 }
-/* ============ دکمه‌های شبکه‌های اجتماعی (تمیز و افقی) ============ */
+
+/* ============ دکمه‌های شبکه‌های اجتماعی ============ */
 .social-links {
     display: flex;
     gap: 12px;
@@ -204,7 +207,6 @@ button { font-family: inherit; }
     flex-wrap: wrap;
     margin-top: 10px;
 }
-
 .social-btn {
     display: inline-flex;
     align-items: center;
@@ -217,24 +219,7 @@ button { font-family: inherit; }
     text-decoration: none;
     transition: all 0.3s ease;
 }
-
-.social-btn svg {
-    width: 20px;
-    height: 20px;
-}
-
-/* افکت هاور برای هر شبکه */
-.social-btn.instagram:hover {
-    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-    transform: translateY(-3px);
-}
-
-.social-btn.telegram:hover {
-    background: #229ED9;
-    transform: translateY(-3px);
-}
-
-.social-btn.whatsapp:hover {
-    background: #25d366;
-    transform: translateY(-3px);
-}
+.social-btn svg { width: 20px; height: 20px; }
+.social-btn.instagram:hover { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); transform: translateY(-3px); }
+.social-btn.telegram:hover { background: #229ED9; transform: translateY(-3px); }
+.social-btn.whatsapp:hover { background: #25d366; transform: translateY(-3px); }
